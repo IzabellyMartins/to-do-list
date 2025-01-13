@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family:"Poppins", sans-serif ;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    display: flex;
+    position: relative;
+    margin-left: 40px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar img{
+    width: 70px;
+}
+.navbar-links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    list-style-type: none;
+}
+
+
+.navbar-links li a{
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    color: #333;
+    font-weight: 500;
+
+}
+
+.navbar-links li:hover{
+    background-color: #dbdbdb;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-title {
+    font-size: 40px;
+    color: #333;
+    font-weight: 600;
+}
+
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 5px;
+}
+
+@media(max-width: 600px) {
+    .navbar{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .toggle-button{
+        display: flex;
+
+    }
+
+    .navbar-links{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li{
+        text-align: center;
+    }
+    .navbar-links ul li a{
+        padding: .5rem 1rem;
+    }
+    .navbar-links.active{
+        display: flex;
+    }
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 2rem auto;
+    max-width: 1200px;
+    gap: 20px;
+    padding: 1rem;
+}
+
+.message {
+    max-width: 600px;
+    text-align: left;
+}
+
+.message h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.message p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.image img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .message {
+        text-align: left;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+}
+
+.btn-simples {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-simples:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    transform: scale(1.05); /* Leve aumento no tamanho ao passar o mouse */
+}
+
+.btn-simples:active {
+    transform: scale(0.95); /* Leve redução no tamanho ao clicar */
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 350px; /* Reduzi a largura máxima */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    font-size: 1.6rem; /* Menor tamanho de fonte */
+    margin-bottom: 1rem; /* Menor margem */
+    color: #333;
+}
+
+.form-container label {
+    font-size: 0.9rem; /* Tamanho menor da fonte */
+    color: #333;
+    margin-bottom: 0.3rem; /* Menor margem */
+}
+
+.form-container input {
+    width: 100%;
+    padding: 8px; /* Menor preenchimento */
+    margin-bottom: 0.8rem; /* Menor espaço entre campos */
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem; /* Menor fonte */
+}
+
+.form-container input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 8px; /* Menor padding */
+    font-size: 0.9rem; /* Fonte um pouco menor */
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+    transform: scale(1.05);
+}
+
+.form-container button:active {
+    transform: scale(0.95);
+}
