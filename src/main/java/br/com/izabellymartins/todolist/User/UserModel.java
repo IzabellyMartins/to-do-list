@@ -1,10 +1,12 @@
 package br.com.izabellymartins.todolist.User;
 
+import br.com.izabellymartins.todolist.task.TaskModel;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -16,19 +18,23 @@ public class UserModel implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID Id;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String nome;
 
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String password;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    // Getter e Setter para Id
+    // Relacionamento com tarefas
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TaskModel> tasks;
+
+    // Getters e Setters (incluindo para tasks)
     public UUID getId() {
         return Id;
     }
@@ -37,7 +43,6 @@ public class UserModel implements Serializable {
         this.Id = id;
     }
 
-    // Getter e Setter para nome
     public String getNome() {
         return nome;
     }
@@ -46,7 +51,6 @@ public class UserModel implements Serializable {
         this.nome = nome;
     }
 
-    // Getter e Setter para email
     public String getEmail() {
         return email;
     }
@@ -55,7 +59,6 @@ public class UserModel implements Serializable {
         this.email = email;
     }
 
-    // Getter e Setter para password
     public String getPassword() {
         return password;
     }
@@ -64,7 +67,6 @@ public class UserModel implements Serializable {
         this.password = password;
     }
 
-    // Getter e Setter para createdAt
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -72,6 +74,15 @@ public class UserModel implements Serializable {
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
+
+    public List<TaskModel> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<TaskModel> tasks) {
+        this.tasks = tasks;
+    }
 }
+
 
 

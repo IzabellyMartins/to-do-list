@@ -2,26 +2,28 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro - Lista de Tarefas</title>
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div id="navbar-placeholder"></div>
-
     <section class="content">
         <div class="form-container">
+            <div id="mensagem" class="mensagem" style="display: none;">
+                <div id="mensagem-conteudo" class="mensagem-conteudo"></div>
+            </div>
             <h2>Crie sua Conta</h2>
-            <form action="#" method="POST">
-                <label for="nome">Nome</label>
+            <form action="/users/cadastro" method="POST">
+                <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
 
-                <label for="email">E-mail</label>
+                <label for="email">E-mail:</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="senha">Senha</label>
+                <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
 
-                <label for="confirmar-senha">Confirmar Senha</label>
+                <label for="confirmar-senha">Confirmar Senha:</label>
                 <input type="password" id="confirmar-senha" name="confirmar-senha" required>
 
                 <div class="login text-center">

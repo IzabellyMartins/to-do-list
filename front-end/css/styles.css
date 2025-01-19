@@ -247,3 +247,28 @@ body{
 .form-container button:active {
     transform: scale(0.95);
 }
+
+.mensagem {
+    position: fixed;
+    top: 100px; /* Ajustado para ficar mais abaixo da navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.mensagem-sucesso {
+    background-color: #28a745; /* Verde */
+    color: white;
+}
+
+.mensagem-erro {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+}
+
